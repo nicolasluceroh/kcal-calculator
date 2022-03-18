@@ -1,0 +1,569 @@
+
+/* --------------- GENERAL START --------------- */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #202020;
+}
+
+main {
+    align-items: center;
+    height: 100vh;
+    display: flex;
+}
+
+/* --------------- GENERAL END --------------- */
+
+
+/* --------------- CC CARD START --------------- */
+
+.cc {
+    display: flex;
+    background-color: #ffffff;
+    width: 40%;
+    height: 37.5rem;
+    padding: 1.25rem;
+    flex-direction: column;
+    border-radius: 0.625rem;
+    border: 0.25rem solid #888888;
+    margin-left: 0.75rem;
+}
+
+/* --- Text START ---*/
+h1 {
+    align-self: center;
+    margin-bottom: 0.625rem;
+    font-weight: 500;
+    font-size: 2em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-bottom: -0.3125rem;
+    margin-top: -1.25rem;
+    color: #202020;
+}
+
+.result  {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #202020;
+}
+
+.unit {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #888888;
+    margin-left: 0.125rem;
+}
+
+.description {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #202020;
+}
+/* --- Text END ---*/
+
+/* --- Gender Section START ---*/
+.cc__gender {
+    height: 5rem;
+    margin-bottom: 0.625rem;
+}
+
+.cc__gender h5 {
+    font-size: 1.2em;
+    align-self: start;
+}
+
+.cc__gender i {
+    margin-right: 0.375rem;
+}
+
+.cc__genderflex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+
+.cc__gender-male label {
+    border: 0.0625rem solid #202020;
+    padding: 0.625rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cc__gender-female label {
+    border: 0.0625rem solid #202020;
+    padding: 0.625rem 1.2022rem 0.625rem 1.2022rem;
+    text-align: center;
+    margin-left: 0.0625rem;
+    cursor: pointer;
+    margin-top: 12.5rem;
+}
+
+.cc__gender input {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    height: 0;
+}
+
+.cc__gender input:checked+label {
+    color: #fff;
+    background-color: #202020;
+}
+/* --- Gender Section END ---*/
+
+/* --- Personal Section START ---*/
+.cc__personalflex {
+    height: 7.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 1.5625rem;
+    flex-direction: column;
+}
+.cc__personal input {
+    width: 7.5rem;
+    height: 1.875rem;
+    font-size: 0.8em;
+    padding-left: 0.625rem;
+    margin-right: 2.9375rem;
+}
+
+.cc__personal h5 {
+    font-size: 1.2em;
+    margin-bottom: 0.3125rem;
+    margin-top: 0.625rem;
+}
+
+.cc__personal i {
+    margin-right: 10px;
+}
+
+.cc__personal h6 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* --- Personal Section END ---*/
+
+/* --- Goal Section START ---*/
+.cc__goal {
+    display: flex;
+    height: 6.25rem;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-bottom: 0.3125rem;
+}
+
+.cc__goal h5 {
+    font-size: 1.2em;
+    margin-bottom: 0.375rem;
+    margin-top: -1.0625rem;
+}
+
+.cc__goal i {
+    margin-right: 0.625rem;
+}
+
+.cc__goal input[type=radio] {
+    height: 1.3em;
+    width: 1.3em;
+    position: absolute;
+    margin-top: 0.125rem;
+}
+
+.cc__goal label {
+    padding-left: 1.5625rem;
+}
+/* --- Goal Section END ---*/
+
+/* --- Activity Section START ---*/
+.cc__activity {
+    display: flex;
+    height: 11.25rem;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.cc__activity h5 {
+    font-size: 1.2em;
+    margin-bottom: 0.375rem;
+}
+
+.cc__activity i {
+    margin-right: 0.625rem;
+}
+
+.cc__activity input[type=radio] {
+    height: 1.3em;
+    width: 1.3em;
+    position: absolute;
+    margin-top: 0.125rem;
+}
+
+.cc__activity label {
+    padding-left: 1.5625rem;
+}
+/* --- Activity Section END ---*/
+
+/* --- CC btn START ---*/
+.btn {
+    margin-top: 1rem;
+    width: 100%;
+    height: 2.8125rem;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #202020;
+    border: 0.0625rem solid #000;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 4px 6px -1px rgb(80, 80, 80);
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 4px #9e9e9e;
+}
+
+.btn:active {
+    background-color: #575757;
+    border: 0;
+}
+/* --- CC btn END ---*/
+
+/* --------------- CC CARD END --------------- */
+
+
+/* --------------- RESULTS CARDS START --------------- */
+
+.cards {
+    display: flex;
+    width: 44rem;
+    height: 40.5rem;
+    flex-direction: column;
+    margin-left: 0.9375rem;
+    opacity: 100%;
+    margin-bottom: 0;
+    justify-content: space-between;
+    transition: 3s;
+}
+
+.cardsopacity {
+    display: flex;
+    width: 44rem;
+    height: 40.5rem;
+    flex-direction: column;
+    margin-left: 0.75rem;
+    opacity: 0%;
+    margin-bottom: 43.75rem;
+    justify-content: space-between;
+    transition: 3s;
+}
+
+.carddisplay {
+    display: none;
+}
+
+.cardsstyle {
+    display: flex;
+    background-color: #ffffff;
+    width: 41rem;
+    height: 9.7rem;
+    padding: 1.25rem;
+    flex-direction: column;
+    border-radius: 0.625rem;
+    border: 0.25rem solid #888888;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* --- Kcal Card START --- */
+.kcalcardflex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+/* --- Kcal Card END --- */
+
+
+/* --- Marcros Card START --- */
+.macroscardflex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+/* --- Marcros Card END --- */
+
+/* --- Fat Card START --- */
+.fatcardflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+/* --- Fat Card END --- */
+
+/* --- Info Cards START --- */
+.infoicon {
+    margin-left: 0.3125rem;
+    color: #888888;
+    z-index: 1000;
+}
+
+.infocard1 {
+    width: 9.375rem;
+    position: absolute;
+    background-color: #000;
+    color: #ffffff;
+    padding: 0.9375rem;
+    font-size: 0.8em;
+    z-index: 1;
+    margin-left: 4.8125rem;
+    margin-top: -2.1875rem;
+}
+
+.infocard2 {
+    width: 9.375rem;
+    position: absolute;
+    background-color: #000;
+    color: #ffffff;
+    padding: 0.9375rem;
+    font-size: 0.8em;
+    z-index: 1;
+    margin-left: 6.1875rem;
+    margin-top: -2.1875rem;
+}
+
+.infocard3 {
+    width: 9.375rem;
+    position: absolute;
+    background-color: #000;
+    color: #ffffff;
+    padding: 0.9375rem;
+    font-size: 0.8em;
+    z-index: 1;
+    margin-left: -1.8125rem;
+    margin-top: 0.5625rem;
+}
+
+.infocard4 {
+    width: 9.375rem;
+    position: absolute;
+    background-color: #000;
+    color: #ffffff;
+    padding: 0.9375rem;
+    font-size: 0.8em;
+    z-index: 1;
+    margin-left: 0.8125rem;
+    margin-top: 0.5625rem;
+}
+
+.infocard5 {
+    width: 9.375rem;
+    position: absolute;
+    background-color: #000;
+    color: #ffffff;
+    padding: 0.9375rem;
+    font-size: 0.8em;
+    z-index: 1;
+    margin-left: 9.375rem;
+    margin-top: -6.75rem;
+}
+
+.infocard5_2 {
+    width: 9.375rem;
+    position: absolute;
+    background-color: #000;
+    color: #ffffff;
+    padding: 0.9375rem;
+    font-size: 0.8em;
+    z-index: 1;
+    margin-left: 10rem;
+    margin-top: -5.75rem;
+}
+
+.arrow {
+    position: absolute;
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    left: -1.0625rem;
+    top: 0.9375rem;
+    border-left: 0.625rem solid transparent;;
+    border-right: 0.625rem solid rgb(0, 0, 0);
+    border-top: 0.625rem solid transparent;
+    border-bottom: 0.625rem solid transparent;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.arrowup {
+    position: absolute;
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    left: 4.8125rem;
+    top: -1.25rem;
+    border-left: 0.625rem solid transparent;;
+    border-right: 0.625rem solid transparent;
+    border-top: 0.625rem solid transparent;
+    border-bottom: 0.625rem solid #000;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.arrowup2 {
+    position: absolute;
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    left: 8.3125rem;
+    top: -1.25rem;
+    border-left: 0.625rem solid transparent;;
+    border-right: 0.625rem solid transparent;
+    border-top: 0.625rem solid transparent;
+    border-bottom: 0.625rem solid #000;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.arrowdown {
+    position: absolute;
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    left: 8rem;
+    top: 4.875rem;
+    border-left: 0.625rem solid transparent;;
+    border-right: 0.625rem solid transparent;
+    border-top: 0.625rem solid #000;
+    border-bottom: 0.625rem solid transparent;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.arrowdown2 {
+    position: absolute;
+    content: '';
+    width: 0.625rem;
+    height: 0.625rem;
+    left: 8.0625rem;
+    top: 3.875rem;
+    border-left: 0.625rem solid transparent;;
+    border-right: 0.625rem solid transparent;
+    border-top: 0.625rem solid #000;
+    border-bottom: 0.625rem solid transparent;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.showcontent {
+    display: none;
+}
+
+/* --- Info Cards END --- */
+
+/* --------------- RESULTS CARDS END --------------- */
+
+
+/* --------------- RESPONSIVE --------------- */
+
+@media (max-width: 1272px) {
+	* {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 1108px) {
+	* {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 954px) {
+	* {
+		font-size: 10px;
+	}
+    main {
+        flex-direction: column;
+    }
+    .cc__personalflex {
+        flex-direction: column;
+    }
+    .cc {
+        width: 85%;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    .cards {
+        width: 85%;
+        margin-left: 0;
+    }
+    .cardsstyle {
+        width: 96.5%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 796px) {
+	* {
+		font-size: 6px;
+	}
+    main {
+        flex-direction: column;
+    }
+    .cc__personalflex {
+        flex-direction: row;
+    }
+    .cc {
+        width: 85%;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    .cards {
+        width: 87%;
+        margin-left: 0;
+    }
+    .cardsstyle {
+        width: 98%;
+    }
+    .kcalcardflex {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .macroscardflex {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .fatcardflex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

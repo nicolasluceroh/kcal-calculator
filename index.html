@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Calculadora Dieta</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+
+        <!-- CALCULATOR START -->
+
+        <form class="cc" id="demoform">
+
+            <!-- TITLE START -->
+            <h1>Calcula tu dieta</h1>
+            <!-- TITLE END -->
+
+            <!--GENDER START -->
+            <div class="cc__gender">
+                <h5><i class="fa fa-venus-mars"></i>Sexo</h5>
+                <div class="cc__genderflex">
+                <div class="cc__gender-male">
+                    <input name="genderS" type="radio" value="1" id="cc_gender:male" checked>
+                    <label for="cc_gender:male">Hombre</label>
+                </div>
+                <div class="cc__gender-female">
+                    <input name="genderS" type="radio" value="2" id="cc_gender:female">
+                    <label for="cc_gender:female">Mujer</label>
+                </div>
+                </div>
+            </div>
+            <!-- GENDER END -->
+
+            <!-- PERSONAL START -->
+            <div class="cc__personal">
+                <h5><i class="fa fa-user"></i>Datos Personales</h5>
+                <div class="cc__personalflex">
+                <div class="personal__age">
+                    <h6>Edad</h6>
+                    <input type="number" placeholder="En años" id="cc_age" name="cc_age" value min="1" max="99">
+                </div>
+                <div class="personal__height">
+                    <h6>Altura</h6>
+                    <input type="number" placeholder="En cm" id="cc_height" name="cc_height">
+                </div>
+                <div class="personal__weight">
+                    <h6>Peso</h6>
+                    <input type="number" placeholder="En kg" id="cc_weight" name="cc_weight">
+                </div>
+                <div class="personal__neck">
+                    <h6>Cuello</h6>
+                    <input type="number" placeholder="En cm" id="cc_neck" name="cc_neck">
+                </div>
+                <div class="personal__waist">
+                    <h6>Cintura</h6>
+                    <input type="number" placeholder="En cm" id="cc_waist" name="cc_waist">
+                </div>
+                <div class="personal__hips">
+                    <h6>Cadera (mujer)</h6>
+                    <input type="number" placeholder="En cm" id="cc_hips" name="cc_hips">
+                </div>
+            </div>
+            </div>
+            <!-- PERSONAL END -->
+
+            <!-- GOALS START -->
+            <div class="cc__goal">
+                <h5><i class="fa fa-bullseye"></i>Objetivo</h5>
+                <div class="cc_goal1">
+                    <input type="radio" value="400" id="cc_goal1" name="cc_goal" checked>
+                    <label for="cc_goal1">Ganar masa muscular</label>
+                </div>
+                <div class="cc_goal2">
+                    <input type="radio" value="-300" id="cc_goal2" name="cc_goal">
+                    <label for="cc_goal2">Definición muscular</label>
+                </div>
+                <div class="cc_goal3">
+                    <input type="radio" value="0" id="cc_goal3" name="cc_goal">
+                    <label for="cc_goal3">Mantener peso</label>
+                </div>
+            </div>
+            <!-- GOALS END -->
+
+            <!-- ACTIVITY START -->
+            <div class="cc__activity">
+                <h5><i class="fa fa-child"></i>Actividad fisica</h5>
+                <div class="cc_activity1">
+                    <input type="radio" value="0" id="cc_activity1" name="cc_activity" checked>
+                    <label for="cc_activity1">Sedentario: poco o nada de ejercicio, trabajo de escritorio</label>
+                </div>
+                <div class="cc_activity2">
+                    <input type="radio" value="1" id="cc_activity2" name="cc_activity">
+                    <label for="cc_activity2">Ligero: actividad ligera, deportes 1 a 3 veces por semana</label>
+                </div>
+                <div class="cc_activity3">
+                    <input type="radio" value="2" id="cc_activity3" name="cc_activity">
+                    <label for="cc_activity3">Activo: actividad moderada, deportes 3 a 5 veces por semana</label>
+                </div>
+                <div class="cc_activity4">
+                    <input type="radio" value="3" id="cc_activity4" name="cc_activity">
+                    <label for="cc_activity4">Muy activo: ejercicio duro o deporter 6 a 7 veces por semana</label>
+                </div>
+                <div class="cc_activity5">
+                    <input type="radio" value="4" id="cc_activity5" name="cc_activity">
+                    <label for="cc_activity5">Extremadamente activo: ejercicio fuerte diario o deportes y trabajo muy exigente</label>
+                </div>
+            </div>
+            <!-- ACTIVITY END -->
+
+            <!-- BTN START -->
+            <div class="cc__btn">
+                <button class="btn" id="cc_calculate" type="button" onclick="onSubmit()">Calcular</button>
+            </div>
+            <!-- BTN END -->
+
+        </form>
+        
+        <!-- CALCULATOR END -->
+        
+
+        <!-- CALCULATOR RESULTS START -->
+        
+        <div class="cardsopacity carddisplay" id="card">
+
+            <!-- KCAL RESULTS START -->
+            <div class="cardsstyle">
+
+                <!-- TITLE START -->
+                <h2>Resultados de Kcal</h2>
+                <!-- TITLE END -->
+
+                <!-- FLEX CONTEINER START -->
+                <div class="kcalcardflex">
+
+                    <!-- BM START -->
+                    <div class="cardbm">
+                        <span class="result BM" id="BM"></span>
+                        <span class="unit">kcal</span>
+                        <div class="description">Tu metabolismo basal<i class="fa fa-info-circle infoicon" id="infoicon1" onmousemove="showInfoCard('infocard1')" onmouseleave="hiddenInfoCard('infocard1')"></i></div>
+                        <div class="infocard1 showcontent" id="infocard1"><span class="arrow"></span>Cantidad de kcal que consume tu cuerpo en reposo.</div>
+                    </div>
+                    <!-- BM END -->
+
+                    <!-- KCAL GOAL START -->
+                    <div class="cardgoal">
+                        <span class="result kcalgoal" id="kcalgoal"></span>
+                        <span class="unit">kcal</span>
+                        <div class="description">Calorias recomendadas para tu objetivo<i class="fa fa-info-circle infoicon" id="infoicon2" onmousemove="showInfoCard('infocard2')" onmouseleave="hiddenInfoCard('infocard2')"></i></div>
+                        <div class="infocard2 showcontent" id="infocard2"><span class="arrow"></span>Cantidad de kcal que debes consumir en un dia para lograr tu objetivo.</div>
+                    </div>
+                    <!-- KCAL GOAL END -->
+
+                    <!-- KCAL ACTIVITY START -->
+                    <div class="cardactivity">
+                        <span class="result kcalactvity" id="kcalactivity"></span>
+                        <span class="unit">kcal</span>
+                        <div class="description">Nivel de actividad fisica<i class="fa fa-info-circle infoicon" id="infoicon3" onmousemove="showInfoCard('infocard3')" onmouseleave="hiddenInfoCard('infocard3')"></i></div>
+                        <div class="infocard3 showcontent" id="infocard3"><span class="arrowup"></span>Cantidad de kcal que quemas segun tu nivel de actividad fisica.</div>
+                    </div>
+                    <!-- KCAL ACTIVITY END -->
+
+                </div>
+                <!-- FLEX CONTEINER END -->
+
+            </div>
+            <!-- KCAL RESULTS END -->
+
+
+            <!-- MACROS RESULTS START -->
+            <div class="cardsstyle">
+
+                <!-- TITLE START -->
+                <h2>Macronutrientes</h2>
+                <!-- TITLE END -->
+
+                <!-- FLEX CONTEINER START -->
+                <div class="macroscardflex">
+
+                    <!-- FATS START -->
+                    <div class="cardfatsg">
+                        <span class="result fatsg" id="fatsg"></span>
+                        <span class="unit">g</span>
+                        <div class="description">Cantidad de grasas a consumir por dia<i class="fa fa-info-circle infoicon" id="infoicon" onmousemove="showInfoCard('infocard4')" onmouseleave="hiddenInfoCard('infocard4')"></i></div>
+                        <div class="infocard4 showcontent" id="infocard4"><span class="arrowup2"></span>Gramos de grasa a consumir (25% de tus kcal).</div>
+                    </div>
+                    <!-- FATS END -->
+
+                    <!-- PROTEIN START -->
+                    <div class="cardproteing">
+                        <span class="result proteing" id="proteing"></span>
+                        <span class="unit">g</span>
+                        <div class="description">Cantidad de proteinas a consumir por dia<i class="fa fa-info-circle infoicon" id="infoicon" onmousemove="showInfoCard('infocard5')" onmouseleave="hiddenInfoCard('infocard5')"></i></div>
+                        <div class="infocard4 showcontent" id="infocard5"><span class="arrowup2"></span>Gramos de proteinas a consumir (2g por kg de peso).</div>
+                    </div>
+                    <!-- PROTEIN END -->
+
+                    <!-- CARBOS START -->
+                    <div class="cardcarbos">
+                        <span class="result carbosg" id="carbosg"></span>
+                        <span class="unit">g</span>
+                        <div class="description">Cantidad de carbohidratos a consumir por dia<i class="fa fa-info-circle infoicon" id="infoicon" onmousemove="showInfoCard('infocard6')" onmouseleave="hiddenInfoCard('infocard6')"></i></div>
+                        <div class="infocard4 showcontent" id="infocard6"><span class="arrowup2"></span>Gramos de carbohidratos a consumir (50% de tus kcal).</div>
+                    </div>
+                    <!-- CARBOS END -->
+                    
+                </div>
+                <!-- FLEX CONTEINER END -->
+
+            </div>
+            <!-- MACROS RESULTS START -->
+
+
+            <!-- FAT RESULTS START -->
+            <div class="cardsstyle">
+
+                <!-- TITLE START -->
+                <h2>Grasa corporal</h2>
+                <!-- TITLE END -->
+
+                <!-- FLEX CONTEIENR START -->
+                <div class="fatcardflex">
+
+                    <!-- FAT% START -->
+                    <div class="cardfatp">
+                        <span class="result fatp" id="fatp"></span>
+                        <span class="unit">%</span>
+                        <div class="description">Tu porcentaje de grasa corporal<i class="fa fa-info-circle infoicon" id="infoicon" onmousemove="showInfoCard('infocard7')" onmouseleave="hiddenInfoCard('infocard7')"></i></div>
+                        <div class="infocard5 showcontent" id="infocard7"><span class="arrowdown"></span>Porcentaje de grasa segun las medidas indicadas.</div>
+                    </div>
+                    <!-- FAT% END -->
+
+                    <!-- FATKG START -->
+                    <div class="cardfatkg">
+                        <span class="result fatkg" id="fatkg"></span>
+                        <span class="unit">kg</span>
+                        <div class="description">Tus kilogramos de grasa corporal<i class="fa fa-info-circle infoicon" id="infoicon" onmousemove="showInfoCard('infocard8')" onmouseleave="hiddenInfoCard('infocard8')"></i></div>
+                        <div class="infocard5_2 showcontent" id="infocard8"><span class="arrowdown2"></span>Kilogramos de grasa de tu peso.</div>
+                    </div>
+                    <!-- FATKG END -->
+
+                </div>
+                <!-- FLEX CONTEINER END -->
+
+            </div>
+            <!-- FAT RESULTS END -->
+
+        </div>
+
+        <!-- CALCULATOR RESULTS END -->
+
+    </main>
+    <script src="main.js" defer></script>
+</body>
+</html>
